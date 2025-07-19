@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map View</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Get coordinates from the URL
+    const params = new URLSearchParams(window.location.search);
+    const coord = params.get("coord");
+
+    if (!coord) {
+      alert("No coordinates provided");
+    } else {
+      const [lat, lng] = coord.split(",").map(Number);
+
+      // Initialize Leaflet map
+      const map = L.map('map').setView([lat, lng], 30);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([lat, lng]).addTo(map)
+        .bindPopup("Selected Location")
+        .openPopup();
+    }
+  </script>
+</body>
+</html>
