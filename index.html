@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Classroom Navigator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #87CEEB;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    select, button, input {
+      font-size: 18px;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: none;
+      margin: 10px 5px;
+    }
+
+    select {
+      background: #f0f0f0;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #loginForm {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #addLectureBtn {
+      display: none;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 24px; }
+      select, button, input { width: 100%; font-size: 20px; margin: 10px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="https://afit.edu.ng/home/wp-content/uploads/2022/02/cropped-AFIT_logo.jpg" alt="AFIT Logo" />
+  </header>
+
+  <h2>🎓 Classroom Navigator</h2>
+
+  <select id="classrooms">
+    <option value="10.610018181142472,7.440292915343388">AMAO HALL</option>
+    <option value="10.609920641718778, 7.442173639677167">AFIT LIBRARY</option>
+    <option value="10.611084860914717, 7.440131737083959">AFIT ICT CENTER</option>
+    <option value="10.60901567384309, 7.443855808334364">ALFA AUDITORIUM</option>
+    <option value="10.609172,7.442630">Aircraft engineering technology department</option>
+    <option value="10.609153,7.442764">AETD Engine Hangar</option>
+    <option value="10.608525,7.441989">John Yisa- Doko Hall</option>
+    <option value="10.608800,7.441608">Mechanical and aerospace ground engineering</option>
+    <option value="10.609117,7.440900">Logistics management department</option>
+    <option value="10.609147,7.440705">Workshop technology section</option>
+    <option value="10.609225,7.440358">Metallurgical and materials engineering workshop</option>
+    <option value="10.609064,7.439897">Information and communication technology department</option>
+    <option value="10.608431 ,7.439850">Air frame Hangar</option>
+    <option value="10.609441,7.440477">Foundry Workshop</option>
+    <option value="10.610189 ,7.441469">Faculty of Air engineering library</option>
+    <option value="10.610533,7.441436">Faculty of Air Engineering</option>
+    <option value="10.610533,7.441436">Gas turbine laboratory</option>
+    <option value="10.610533,7.441436">Fluid mechanics laboratory</option>
+    <option value="10.610514,7.440583">AFIT Electrical Electronics Department</option>
+    <option value="10.610514,7.440583">Lr 131</option>
+    <option value="10.610514,7.440583">EED Class1</option>
+    <option value="10.610514,7.440583">Lr 123</option>
+    <option value="10.610997,7.440114">ICT CENTRE</option>
+    <option value="10.610997,7.440114">classroom 210DA</option>
+    <option value="10.610997,7.440114">CEED Classroom ll</option>
+    <option value="10.610997,7.440114">HND Classroom ll</option>
+    <option value="10.610439 ,7.439719">School of postgraduate studies</option>
+    <option value="10.610439 ,7.439719">Lr 111</option>
+    <option value="10.610439 ,7.439719">Lr 112</option>
+    <option value="10.610439 ,7.439719">Lr 113</option>
+    <option value="10.610439 ,7.439719">Lr 114</option>
+    <option value="10.610439 ,7.439719">Lr 115</option>
+    <option value="10.610439 ,7.439719">Lr 116</option>
+    <option value="10.609950,7.443420">Civil and Environmental Engineering departments 261</option>
+    <option value="10.609950,7.443420">Lecture room 261</option>
+    <option value="10.609950,7.443420">Lecture room 261</option>
+    <option value="10.609950,7.443420">Lecture room 262</option>
+    <option value="10.609950,7.443420">Lecture room 263</option>
+    <option value="10.609950,7.443420">Lecture room 264</option>
+    <option value="10.609950,7.443420">Faculty of Air Engineering</option>
+    <option value="10.611694,7.441028">Lr B11</option>
+    <option value="10.611694,7.441028">Lr B21</option>
+    <option value="10.611694,7.441028">Lr A12</option>
+    <option value="10.611694,7.441028">Lr A21</option>
+    <option value="10.611694,7.441028">Autotronic laboratory</option>
+    <option value="10.611631,7.440033"> AED LECTURE HALL</option>
+    <option value="10.611631,7.440033">Lecture Hall A</option>
+    <option value="10.611631,7.440033">Lecture Hall B1</option>
+    <option value="10.611631,7.440033">Lecture Hall B2</option>
+    <option value="10.611631,7.440033">Lecture Hall C1</option>
+    <option value="10.611631,7.440033">Lecture Hall C2</option>
+    <option value="10.612058,7.441956">Lr 101</option>
+    <option value="10.612058,7.441956">Lr 102</option>
+    <option value="10.612058,7.441956">Lr 201</option>
+    <option value="10.612058,7.441956">Lr 202</option>
+    <option value="10.612572,7.442606">Lecture Hall 301</option>
+    <option value="10.612572,7.442606">Lecture Hall 302</option>
+    <option value="10.612572,7.442606">Lecture Hall 303</option>
+    <option value="10.612572,7.442606">Lecture Hall 304</option>
+    <option value="10.609400,7.441117">LR191</option>
+    <option value="10.609400,7.441117">LR192</option>
+    <option value="10.609400,7.441117">LR193</option>
+    <option value="10.609400,7.441117">LR194</option>
+    <option value="10.609175,7.441961">French Lab</option>
+    <option value="10.609175,7.441961">Chemistry Lab</option>
+    <option value="10.609175,7.441961">Lr 073</option>
+    <option value="10.609172,7.442631">Lr 1</option>
+    <option value="10.609172,7.442631">Lr 3</option>
+    <option value="10.609172,7.442631">Technical Drawing Studio</option>
+    <option value="10.609172,7.442631">Avionics Laboratory</option>
+    <option value="10.609206,7.444722">Faculty of Science (FOS)</option>
+    <option value="10.609206,7.444722">Lecture room 1</option>
+    <option value="10.609206,7.444722">Lecture room 2</option>
+    <option value="10.609206,7.444722">Lecture room 3</option>
+    <option value="10.609206,7.444722">Lecture room 4</option>
+    <option value="10.609458,7.445230">Faculty of Social Management Sciences (FSMS)</option>
+    <option value="10.609458,7.445230">Lecture room 1</option>
+    <option value="10.609458,7.445230">Lecture room 2</option>
+    <option value="10.609458,7.445230">Lecture room 3</option>
+    <option value="10.609458,7.445230">Lecture room 4</option>
+    <option value="10.610317,7.446075">Faculty of Computing (FOC)</option>
+    <option value="10.610317,7.446075">Lecture room 1</option>
+    <option value="10.610317,7.446075">Lecture room 2</option>
+    <option value="10.608800,7.441608">Mechanical and Aerospace Ground Engineering Department</option>
+    <option value="10.608800,7.441608">Machine Shop</option>
+    <option value="10.608800,7.441608">LR061</option>
+    <option value="10.609117,7.440900">Lr 053</option>
+    <option value="10.609117,7.440900">Lr 051</option>
+    <option value="10.609117,7.440900">Lr 055</option>
+    <option value="10.609117,7.440900">ILPmoc 512034</option>
+
+  </select>
+
+  <br />
+
+  <button onclick="navigate()">🚀 Navigate</button>
+  <button onclick="toggleLogin()">⚙️ Settings</button>
+
+  <div id="loginForm">
+    <input type="text" id="username" placeholder="Username" /><br />
+    <input type="password" id="password" placeholder="Password" /><br />
+    <button onclick="login()">🔐 Login</button>
+  </div>
+
+  <button id="addLectureBtn">➕ Add Lecture Hall</button>
+
+  <script>
+    function navigate() {
+      // Get selected classroom coordinates
+      const select = document.getElementById("classrooms");
+      const coords = select.value;
+      // Open Google Maps with the coordinates
+      const url = `https://www.google.com/maps?q=${coords}`;
+      window.open(url, "_blank");
+    }
+
+    function toggleLogin() {
+      const form = document.getElementById("loginForm");
+      if (form.style.display === "block") {
+        form.style.display = "none";
+      } else {
+        form.style.display = "block";
+      }
+    }
+
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "user" && password === "password") {
+        alert("Login successful!");
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("addLectureBtn").style.display = "inline-block";
+      } else {
+        alert("Invalid credentials!");
+      }
+    }
+  </script>
+</body>
+</html>
